@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
+const { findByPhone, createUser} = require("../services/user.service");
 
 // Dummy in-memory user store (temporary)
-const users = [];
 
 exports.sendOtp = (req, res) => {
   const { phone } = req.body;
@@ -27,15 +27,10 @@ exports.verifyOtp = (req, res) => {
     return res.status(401).json({ message: "Invalid OTP" });
   }
 
-  let user = users.find(u => u.phone === phone);
+  let user = findByPhone(phone);
 
   if (!user) {
-    user = {
-      id: users.length + 1,
-      phone,
-      role: "USER",
-    };
-    users.push(user);
+    user = createUser(phone);
   }
 
   const token = jwt.sign(
