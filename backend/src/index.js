@@ -3,7 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const  authRoutes = require("./routes/auth.routes");
-
+const protectedRoutes = require("./routes/protected.routes");
 const app = express();
 
 app.use(cors());
@@ -14,6 +14,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/auth", authRoutes);
+app.use("/protected", protectedRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
