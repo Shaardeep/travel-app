@@ -48,17 +48,25 @@ A scalable multi-vendor travel marketplace built using a modern technology stack
 | DevOps   | Docker + CI/CD           |
 
 
-# Project Achievements (Completed So Far) | 30-12-2025
----
+## Project Achievements (Completed So Far) | 30-05-2025
+
 - Created a clean project workspace with a single repository and separate folders for frontend, backend, docker, and documentation.
 - Successfully set up a Next.js application using the App Router, TypeScript, ESLint, and modern configuration best practices.
 - Installed and configured Node.js inside WSL (Ubuntu) using NVM, ensuring a proper Linux-based development environment independent of Windows Node.
 - Initialized a Node.js + Express backend with essential middleware (cors, dotenv) and a clean entry point structure.
-- Implemented a backend health check API (/health) to verify server availability and correctness.
-- Verified backend functionality locally using browser and command-line testing. 
-- Established environment variable management for frontend and backend using .env files.
+- Implemented a backend health check API (`/health`) to verify server availability and correctness.
+- Verified backend functionality locally using browser and command-line testing.
+- Established environment variable management for frontend and backend using `.env` files.
 - Connected the Next.js frontend to the Node.js backend through a shared API configuration.
 - Implemented a frontend API helper layer to consume backend services in a clean, reusable way.
-- Displayed real-time backend status on the frontend UI, confirming end-to-end communication. 
+- Displayed real-time backend status on the frontend UI, confirming end-to-end communication.
 - Validated a working full-stack development flow (WSL → Frontend → Backend → API response).
 - Followed a phased, production-style setup approach aligned with real-world engineering practices.
+- Designed and implemented a role-based authentication system supporting User, Vendor, and Admin roles.
+- Implemented JWT-based authentication with protected backend routes.
+- Verified protected route access using Authorization headers and JWT tokens.
+- Built and tested a complete OTP-based login flow (request OTP → verify OTP → issue JWT).
+- Implemented backend middleware for role-based access control.
+- Successfully tested authentication and authorization flows using `curl` commands.
+- Ensured clean separation of concerns using controllers, services, and middleware layers.
+- Established a scalable backend structure suitable for future database and service integration.
